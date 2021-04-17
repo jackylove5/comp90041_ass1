@@ -21,7 +21,31 @@ public class ConsoleDrawing {
     	
     	for(int i=0;i<9999;i++) {
     		int option = canvas.Drawing_command();
-    		break;
+    		builder = canvas.Drawing(option, builder, width, height, back_char_);
+    		
+    		if(option==3) {
+    			DrawingCanvas renew = new DrawingCanvas();
+    			width = renew.renew_width();
+    			height = renew.renew_height();
+    			back_char_ = renew.renew_back_char();
+    			System.out.println("Drawing canvas has been updated!");
+    			System.out.println("Current drawing canvas settings:");
+    			System.out.println("- Width: "+width);
+    			System.out.println("- Height: "+height);
+    			System.out.println("- Background character: "+ back_char);
+    			continue;
+    			
+    		}
+    		
+    		else if(option==4) {
+    			System.out.println("Goodbye!");
+    			break;
+    		}
+    		else {
+    			System.out.println("Unsupported option. Please try again!");
+    			continue;
+    		}
+    		
     	}
     		
 
